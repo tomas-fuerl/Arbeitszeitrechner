@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 
 <head>
@@ -10,13 +10,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
 
-    <!-- JS-Funktionen -->
-    <script src="functions.js"></script>
-
     <title>Arbeitszeitrechner</title>
+    <script src="ueberstunden.js"></script>
 </head>
 
-<body onload="uhrzeit(); loadbegin()">
+<body onload="uhrzeit(); berechnung(); loadbegin()">
     <div class="container">
         <div class="card text-center my-4">
             <div class="card-header">
@@ -99,6 +97,7 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
+<script src="functions.js"></script>
 
 </html>

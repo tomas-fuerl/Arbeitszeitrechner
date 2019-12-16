@@ -14,6 +14,24 @@ function uhrzeit() {
 	setTimeout(uhrzeit, 50);
 }
 
+function fuehrendeNull(zahl) {
+	zahl = (zahl < 10 ? '0' : '') + zahl;
+	return zahl;
+}
+
+function minutesToHHMM(zahl) {
+	var minus = false;
+	if (zahl < 0) {
+		minus = true;
+		zahl = 0 - Number(zahl);
+	}
+	zahl = fuehrendeNull(Math.floor(zahl / 60)) + ":" + fuehrendeNull(Math.floor(zahl - (Math.floor(zahl / 60) * 60)));
+	if (minus == true) {
+		zahl = "-" + zahl;
+	}
+	return zahl;
+}
+
 function berechnung() {
 	start = document.getElementById('start').value;
 	start = start.split(":");
@@ -55,22 +73,4 @@ function loadbegin() {
 		jetztMinuten = Number(jetzt.getMinutes()) + Number(jetzt.getHours()) * 60;
 		document.getElementById('start').value = minutesToHHMM(jetztMinuten);
 	}
-}
-
-function fuehrendeNull(zahl) {
-	zahl = (zahl < 10 ? '0' : '') + zahl;
-	return zahl;
-}
-
-function minutesToHHMM(zahl) {
-	var minus = false;
-	if (zahl < 0) {
-		minus = true;
-		zahl = 0 - Number(zahl);
-	}
-	zahl = fuehrendeNull(Math.floor(zahl / 60)) + ":" + fuehrendeNull(Math.floor(zahl - (Math.floor(zahl / 60) * 60)));
-	if (minus == true) {
-		zahl = "-" + zahl;
-	}
-	return zahl;
 }
