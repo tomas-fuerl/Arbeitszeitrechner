@@ -1,0 +1,1 @@
+/* Hier werden alle Funktionen hinterlegt, die sich Daten holt aus der Umgebung */
