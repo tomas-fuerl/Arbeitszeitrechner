@@ -11,7 +11,16 @@
     <link rel="stylesheet" href="bootstrap.min.css">
 
     <title>Arbeitszeitrechner</title>
-    <script src="ueberstunden.js"></script>
+    
+    <!-- Lade JS-Dateien in richiger Reihenfolge -->
+
+    <!-- Funktionsbibliothek -->
+    <script src="functions.js"></script>
+
+    <!-- MVC -->
+    <script src="controller.js"></script>
+    <script src="model.js"></script>
+    <script src="view.js"></script>
 </head>
 
 <body onload="uhrzeit(); berechnung(); loadbegin()">
