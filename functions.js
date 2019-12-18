@@ -1,3 +1,11 @@
+/* Nimmt Dezimalen Wert in Stunde und wandelt ihn in Integer in Millisekunden um */
+function decH_zu_intMS(decimal) {
+    // decimal Hours x 60/minutes x 60/seconds x 1000/milliseconds = milliseconds
+    integerMS = decimal * 60 * 60 * 1000;
+    integerMS = parseInt(integerMS);
+    return integerMS;
+}
+
 function uhrzeit() {
 	var jetzt = new Date();
 	h1 = jetzt.getHours();
