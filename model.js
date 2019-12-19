@@ -31,6 +31,13 @@ function ueberstunden(float_ueberstunden_oberflaeche) {
     return gesamtsaldo;
 }
 
+
+/* normalisiert den Uhrzeit-Input-String in Form von HH:MM von HTML zu Millisekunden seit 1.1.1970 */
 function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
-    str_arbeitsbeginn_Oberflaeche
+    stunden = str_arbeitsbeginn_Oberflaeche.substring(0, 2);
+    minuten = str_arbeitsbeginn_Oberflaeche.substring(3);
+
+    /* Wandle in Minuten um und dann in Sekunden und Millisekunden */
+    int_arbeitsbeginn_in_MS = (stunden * 60 + minuten) * 60 * 1000;
+    return int_arbeitsbeginn_in_MS;
 }
