@@ -6,25 +6,6 @@ function decH_zu_intMS(decimal) {
 	return integerMS;
 }
 
-/* returned das aktuelle Datum in Form von DD.MM.JJJJ aus */
-function date_heute_ddmmjjjj() {
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth() + 1; //January is 0!
-	var yyyy = today.getFullYear();
-
-	if (dd < 10) {
-		dd = '0' + dd
-	}
-
-	if (mm < 10) {
-		mm = '0' + mm
-	}
-
-	today = dd + '.' + mm + '.' + yyyy;
-	return today;
-}
-
 function uhrzeit() {
 	var jetzt = new Date();
 	h1 = jetzt.getHours();
