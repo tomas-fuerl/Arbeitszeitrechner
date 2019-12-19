@@ -54,3 +54,9 @@ function int_arbeitszeit_in_MS() {
     var arbeitszeit = 8.10;
     return decH_zu_intMS(arbeitszeit);
 }
+
+/* gibt aktuellen Zeitpunkt in ms aus */
+function int_timestamp_in_MS() {
+    var today = new Date();
+    return today.getTime();
+}
