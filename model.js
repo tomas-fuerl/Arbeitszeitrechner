@@ -60,3 +60,17 @@ function int_timestamp_in_MS() {
     var today = new Date();
     return today.getTime();
 }
+
+/* gibt Pausenzeiten anhand von checkboxen in MS zurück*/
+function int_pausen_in_MS() {
+    var int_pausenzeit_in_MS = 0;
+    /* Wenn Frühstückpausenauswahlfelt angehakt ist += 15 min */
+    if(document.getElementById("fruehstueck").checked){
+        int_pausenzeit_in_MS += 0.25;
+    }
+    /* Wenn Frühstückpausenauswahlfelt angehakt ist += 15 min */
+    if(document.getElementById("mittag").checked){
+        int_pausenzeit_in_MS += 0.5;
+    }
+    return decH_zu_intMS(int_pausenzeit_in_MS);
+}
