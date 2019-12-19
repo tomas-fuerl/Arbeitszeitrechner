@@ -74,3 +74,9 @@ function int_pausen_in_MS() {
     }
     return decH_zu_intMS(int_pausenzeit_in_MS);
 }
+
+/* gibt Zeitraum seit Arbeitsbeginn in ms aus */
+function int_bis_jetzt_in_MS() {
+    var bis_jetzt = int_timestamp_in_MS() - arbeitsbeginn() - int_pausen_in_MS();
+    return bis_jetzt;
+}
