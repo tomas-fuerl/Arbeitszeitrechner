@@ -22,11 +22,6 @@ function uhrzeit() {
 	setTimeout(uhrzeit, 50);
 }
 
-function fuehrendeNull(zahl) {
-	zahl = (zahl < 10 ? '0' : '') + zahl;
-	return zahl;
-}
-
 
 /* 
 

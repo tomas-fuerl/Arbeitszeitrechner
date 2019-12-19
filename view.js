@@ -1,5 +1,11 @@
 /* Hier werden alle Funktionen zur Anzeige hinterlegt */
 
+/* Wandelt eine einstellige Zahl um, dass ein Null davor steht */
+function fuehrendeNull(zahl) {
+	zahl = (zahl < 10 ? '0' : '') + zahl;
+	return zahl;
+}
+
 /* Wandelt einen Zeitpunkt von ms seit 1970 in eine Uhrzeit vom Format HH:MM (negative Zeiträume werden auch gehandelt)*/
 function millisecondsToHHMM(int_milliseconds) {
 	var minus = false;
