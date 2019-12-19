@@ -1,9 +1,28 @@
 /* Nimmt Dezimalen Wert in Stunde und wandelt ihn in Integer in Millisekunden um */
 function decH_zu_intMS(decimal) {
-    // decimal Hours x 60/minutes x 60/seconds x 1000/milliseconds = milliseconds
-    integerMS = decimal * 60 * 60 * 1000;
-    integerMS = parseInt(integerMS);
-    return integerMS;
+	// decimal Hours x 60/minutes x 60/seconds x 1000/milliseconds = milliseconds
+	integerMS = decimal * 60 * 60 * 1000;
+	integerMS = parseInt(integerMS);
+	return integerMS;
+}
+
+/* returned das aktuelle Datum in Form von DD.MM.JJJJ aus */
+function date_heute_ddmmjjjj() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if (dd < 10) {
+		dd = '0' + dd
+	}
+
+	if (mm < 10) {
+		mm = '0' + mm
+	}
+
+	today = dd + '.' + mm + '.' + yyyy;
+	return today;
 }
 
 function uhrzeit() {
