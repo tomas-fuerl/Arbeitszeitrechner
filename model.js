@@ -31,7 +31,6 @@ function ueberstunden(float_ueberstunden_oberflaeche) {
     return gesamtsaldo;
 }
 
-
 /* normalisiert den Uhrzeit-Input-String in Form von HH:MM von HTML zu Millisekunden seit 1.1.1970 */
 function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
     stunden = str_arbeitsbeginn_Oberflaeche.substring(0, 2);
@@ -39,5 +38,12 @@ function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
 
     /* Wandle in Minuten um und dann in Sekunden und Millisekunden */
     int_arbeitsbeginn_in_MS = (stunden * 60 + minuten) * 60 * 1000;
+
+    /* Wandle aktuelles Datum in Millisekunden um */
+    date_today = Date.parse(date_heute_ddmmjjjj());
+
+    /* rechne heutiges Datum mit Uhrzeit zusammen */
+    int_arbeitsbeginn_in_MS += date_today;
+
     return int_arbeitsbeginn_in_MS;
 }
