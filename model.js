@@ -80,3 +80,13 @@ function int_bis_jetzt_in_MS() {
     var bis_jetzt = int_timestamp_in_MS() - arbeitsbeginn() - int_pausen_in_MS();
     return bis_jetzt;
 }
+
+/* gibt Zeitpunkt oder Zeitraum in Texas aus in MS */
+function int_texastime_in_MS(int_deutschlandtime_in_MS) {
+    int_deutschlandtime_in_MS -= 7 /* Stunden */ * 60 /* Minuten */ * 60 /* Sekunden */ * 1000 /* Millisekunden */;
+    /* fange negative Werte ab und gebe stattdessen eine gültige Zeit am Vortag an */
+    if (int_deutschlandtime_in_MS < 0) {
+        int_deutschlandtime_in_MS += 24 /* Stunden */ * 60 /* Minuten */ * 60 /* Sekunden */ * 1000 /* Millisekunden */;
+    }
+    return int_deutschlandtime_in_MS;
+}
