@@ -33,8 +33,8 @@ function ueberstunden(float_ueberstunden_oberflaeche) {
 
 /* normalisiert den Uhrzeit-Input-String in Form von HH:MM von HTML zu Millisekunden seit 1.1.1970 */
 function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
-    var stunden = str_arbeitsbeginn_Oberflaeche.substring(0, 2);
-    var minuten = str_arbeitsbeginn_Oberflaeche.substring(3);
+    var stunden = document.getElementById("start").value.substring(0, 2);
+    var minuten = document.getElementById("start").value.substring(3);
 
     /* Wandle in Minuten um und dann in Sekunden und Millisekunden */
     int_arbeitsbeginn_in_MS = (stunden * 60 + minuten) * 60 * 1000;
@@ -65,11 +65,11 @@ function int_timestamp_in_MS() {
 function int_pausen_in_MS() {
     var int_pausenzeit_in_MS = 0;
     /* Wenn Frühstückpausenauswahlfelt angehakt ist += 15 min */
-    if(document.getElementById("fruehstueck").checked){
+    if (document.getElementById("fruehstueckspause").checked) {
         int_pausenzeit_in_MS += 0.25;
     }
     /* Wenn Frühstückpausenauswahlfelt angehakt ist += 15 min */
-    if(document.getElementById("mittag").checked){
+    if (document.getElementById("mittagspause").checked) {
         int_pausenzeit_in_MS += 0.5;
     }
     return decH_zu_intMS(int_pausenzeit_in_MS);
@@ -89,4 +89,10 @@ function int_texastime_in_MS(int_deutschlandtime_in_MS) {
         int_deutschlandtime_in_MS += 24 /* Stunden */ * 60 /* Minuten */ * 60 /* Sekunden */ * 1000 /* Millisekunden */;
     }
     return int_deutschlandtime_in_MS;
+}
+
+/* gibt Regulären Endzeitpunkt aus (Arbeitsbeginn + Pausen + Arbeitszeit) */
+function int_regulaeres_Ende_in_MS() {
+    var int_regulaeres_Ende = arbeitsbeginn() + int_pausen_in_MS() + int_arbeitszeit_in_MS();
+    return int_regulaeres_Ende;
 }
