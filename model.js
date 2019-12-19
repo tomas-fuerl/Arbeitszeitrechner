@@ -1,7 +1,7 @@
 /* Hier werden alle Funktionen hinterlegt, die sich Daten holt aus der Umgebung */
 
-/* Diese Funktion nimmt einen dezimalen Zeitraum in Stunden als float und rechnet diesen mit dem darinstehenden Array zusammen zu einer Dezimalstunden-Zahl*/
-function ueberstunden(float_ueberstunden_oberflaeche) {
+/* Diese Funktion nimmt einen dezimalen Zeitraum in Stunden als float und rechnet diesen mit dem darinstehenden Array zusammen zu einem Integer-Zeitraum */
+function int_ueberstunden_in_MS() {
 
     /*  Hier kann man alle Ueberstunden eintragen, die von einzelnen Monaten sind
         Dabei gilt der Syntax "Zahl, Zahl, Zahl, Zahl, ...". Diese Liste ist unendlich lang erweiterbar. 
@@ -27,7 +27,8 @@ function ueberstunden(float_ueberstunden_oberflaeche) {
     for (var i = 0; i < ueberstunden.length; i++) {
         gesamtsaldo += ueberstunden[i];
     }
-    gesamtsaldo += float_ueberstunden_oberflaeche;
+    gesamtsaldo += document.getElementById("ueberstunden").value;
+    gesamtsaldo = decH_zu_intMS(gesamtsaldo);
     return gesamtsaldo;
 }
 
@@ -96,3 +97,10 @@ function int_regulaeres_Ende_in_MS() {
     var int_regulaeres_Ende = arbeitsbeginn() + int_pausen_in_MS() + int_arbeitszeit_in_MS();
     return int_regulaeres_Ende;
 }
+
+/* gibt den Frühesten Endzeitpunkt aus (Regulärer Endzeitpunkt - Überstunden) */
+function int_fruehestes_Ende_in_MS() {
+    var int_fruehestes_Ende = int_regulaeres_Ende_in_MS() - int_ueberstunden_in_MS();
+    return int_fruehestes_Ende;
+}
+
