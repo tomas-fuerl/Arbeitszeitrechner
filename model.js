@@ -33,14 +33,14 @@ function ueberstunden(float_ueberstunden_oberflaeche) {
 
 /* normalisiert den Uhrzeit-Input-String in Form von HH:MM von HTML zu Millisekunden seit 1.1.1970 */
 function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
-    stunden = str_arbeitsbeginn_Oberflaeche.substring(0, 2);
-    minuten = str_arbeitsbeginn_Oberflaeche.substring(3);
+    var stunden = str_arbeitsbeginn_Oberflaeche.substring(0, 2);
+    var minuten = str_arbeitsbeginn_Oberflaeche.substring(3);
 
     /* Wandle in Minuten um und dann in Sekunden und Millisekunden */
     int_arbeitsbeginn_in_MS = (stunden * 60 + minuten) * 60 * 1000;
 
     /* Wandle aktuelles Datum in Millisekunden um */
-    date_today = Date.parse(date_heute_ddmmjjjj());
+    var date_today = Date.parse(date_heute_ddmmjjjj());
 
     /* rechne heutiges Datum mit Uhrzeit zusammen */
     int_arbeitsbeginn_in_MS += date_today;
