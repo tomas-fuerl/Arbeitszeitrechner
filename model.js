@@ -47,3 +47,10 @@ function arbeitsbeginn(str_arbeitsbeginn_Oberflaeche) {
 
     return int_arbeitsbeginn_in_MS;
 }
+
+/* gibt die Reguläre Arbeitszeit in ms aus */
+function int_arbeitszeit_in_MS() {
+    /* 8 Stunden Arbeit und 6 Minuten Wegezeit (0.10 Stunden)*/
+    var arbeitszeit = 8.10;
+    return decH_zu_intMS(arbeitszeit);
+}
