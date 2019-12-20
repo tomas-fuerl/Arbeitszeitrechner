@@ -81,6 +81,6 @@ function datetime_regulaeres_Ende() {
 }
 
 /* gibt den Frühesten Endzeitpunkt aus (Regulärer Endzeitpunkt - Überstunden) */
-function int_fruehestes_Ende_in_MS() {
+function int_fruehestes_Ende() {
     return  datetime_regulaeres_Ende().add(-float_ueberstunden()).hours();
 }

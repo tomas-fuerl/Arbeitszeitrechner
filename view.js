@@ -13,3 +13,9 @@ function set_regulaeres_Ende() {
 	document.getElementById("regulaeres_Ende").innerHTML = datetime_regulaeres_Ende().toString("HH:mm") + " Uhr";
 	return 0;
 }
+
+/* gibt Frühesten Endzeitpunkt im Feld mit der ID "fuehestes_Ende" im Format "HH:mm" aus */
+function set_fruehestes_Ende() {
+	document.getElementById("fuehestes_Ende").innerHTML = int_fruehestes_Ende().toString("HH:mm") + " Uhr";
+	return 0;
+}
