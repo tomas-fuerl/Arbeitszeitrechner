@@ -1,9 +1,14 @@
 /* Hier werden alle Funktionen hinterlegt, die sich Daten holen aus der Umgebung */
 
 /* gibt den Arbeitsbeginn in date.js-Format aus anhand vom Input-Feld "start"*/
-function datetime_Arbeitsbeginn_ausgeben() {
+function datetime_Arbeitsbeginn() {
     var uhrzeit = document.getElementById("start").value;
-    return Date.today().at(uhrzeit);
+    /* Wenn Feld Leer ist, nehme 00:00 */
+    if (uhrzeit === "") {
+        return Date.today();
+    } else {
+        return Date.today().at(uhrzeit);
+    }
 }
 
 /* nimmt den Wert aus dem Feld "ueberstunden" als float und rechnet diesen mit dem darinstehenden Array zusammen (Ausgabe als Dezimalstunde)*/
@@ -63,7 +68,7 @@ function float_pausen_decH() {
 
 /* gibt Zeitraum seit Arbeitsbeginn in Dezimalstunden aus; berücksichtigt Pausenseit */
 function float_bis_jetzt_decH() {
-    var bis_jetzt = datetime_Arbeitsbeginn_ausgeben().getElapsed();
+    var bis_jetzt = datetime_Arbeitsbeginn().getElapsed();
     /* Wandle in decH um */
     bis_jetzt = bis_jetzt/ (1000*60*60);
     bis_jetzt -= float_pausen_decH();
@@ -72,7 +77,7 @@ function float_bis_jetzt_decH() {
 
 /* gibt Regulären Endzeitpunkt aus (Arbeitsbeginn + Pausen + Arbeitszeit) */
 function datetime_regulaeres_Ende() {
-    return datetime_Arbeitsbeginn_ausgeben().add(float_pausen_decH()+float_Arbeitszeit_decH()).hours();;
+    return datetime_Arbeitsbeginn().add(float_pausen_decH()+float_Arbeitszeit_decH()).hours();;
 }
 
 /* gibt den Frühesten Endzeitpunkt aus (Regulärer Endzeitpunkt - Überstunden) */
