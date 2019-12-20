@@ -27,3 +27,11 @@ function set_bis_jetzt() {
 	document.getElementById("bis_jetzt").innerHTML = string_bis_jetzt;
 	return 0;
 }
+
+/* gibt die gesamten Überstunden aus im Feld mit der ID "ueberstunden_gesamt" im Format "HH:mm h" und dahinter in Dezimalstunden */
+function set_ueberstunden() {
+	var float_ueberstunden_gesamt = float_ueberstunden();
+	var string_ueberstunden_gesamt = Date.today().add(float_ueberstunden_gesamt).hours().toString("HH:mm") + " h (" + float_ueberstunden_gesamt + ")";
+	document.getElementById("ueberstunden_gesamt").innerHTML = string_ueberstunden_gesamt;
+	return 0;
+}

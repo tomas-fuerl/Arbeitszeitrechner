@@ -33,7 +33,7 @@ function float_ueberstunden() {
         gesamtsaldo += ueberstunden[i];
     }
     gesamtsaldo += document.getElementById("ueberstunden").value;
-    return gesamtsaldo;
+    return parseFloat(gesamtsaldo);
 }
 /* gibt die Reguläre Arbeitszeit in Dezimalstunden aus */
 function float_Arbeitszeit_decH() {
