@@ -35,3 +35,10 @@ function set_ueberstunden() {
 	document.getElementById("ueberstunden_gesamt").innerHTML = string_ueberstunden_gesamt;
 	return 0;
 }
+
+/* gibt die Uhrzeiten für Deutschland und Texas in den Feldern "uhr1" und "uhr2" aus im Format "HH:mm" */
+function set_uhren() {
+	document.getElementById("uhr1").innerHTML = "Uhrzeit Deutschland: " + new Date().toLocaleTimeString();
+	document.getElementById("uhr2").innerHTML = "Uhrzeit Texas: " + new Date().add(-7).hours().toLocaleTimeString();
+	return 0;
+}
