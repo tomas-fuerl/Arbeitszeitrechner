@@ -2,7 +2,7 @@
 
 /* gibt Reguläre Arbeitszeit im Feld mit id "regulaere_Arbeitszeit" im Format "HH:mm h" aus und dahinter in Dezimalstunden */
 function set_regulaere_Arbeitszeit() {
-	var float_regulaere_Arbeitszeit = float_Arbeitszeit_decH() + float_pausen_decH()
+	var float_regulaere_Arbeitszeit = float_Arbeitszeit_decH() + float_pausen_decH();
 	var string_regulaere_Arbeitszeit = Date.today().add(float_regulaere_Arbeitszeit).hours().toString("HH:mm") + " h (" + float_regulaere_Arbeitszeit + ")";
 	document.getElementById("regulaere_Arbeitszeit").innerHTML = string_regulaere_Arbeitszeit;
 	return 0;
@@ -17,5 +17,13 @@ function set_regulaeres_Ende() {
 /* gibt Frühesten Endzeitpunkt im Feld mit der ID "fuehestes_Ende" im Format "HH:mm" aus */
 function set_fruehestes_Ende() {
 	document.getElementById("fuehestes_Ende").innerHTML = int_fruehestes_Ende().toString("HH:mm") + " Uhr";
+	return 0;
+}
+
+/* gibt den Zeitraum bis Jetzt seit Arbeitsbeginn aus im Feld mit der ID "bis_jetzt" im Format "HH:mm h" und dahinter in Dezimalstunden */
+function set_bis_jetzt() {
+	var float_bis_jetzt = float_bis_jetzt_decH();
+	var string_bis_jetzt = Date.today().add(float_bis_jetzt).hours().toString("HH:mm") + " h (" + float_bis_jetzt + ")";
+	document.getElementById("bis_jetzt").innerHTML = string_bis_jetzt;
 	return 0;
 }
