@@ -70,11 +70,6 @@ function float_bis_jetzt_decH() {
     return bis_jetzt;
 }
 
-/* gibt einen Zeitpunkt in Texas-Zeit aus (-7 Stunden) */
-function datetime_texastime(datetime_deutschlandtime) {
-    return datetime_deutschlandtime.add(-7).hours();
-}
-
 /* gibt Regulären Endzeitpunkt aus (Arbeitsbeginn + Pausen + Arbeitszeit) */
 function datetime_regulaeres_Ende() {
     return datetime_Arbeitsbeginn_ausgeben().add(float_pausen_decH()+float_Arbeitszeit_decH()).hours();;
