@@ -3,7 +3,7 @@
 /* gibt Reguläre Arbeitszeit im Feld mit id "regulaere_Arbeitszeit" im Format "HH:mm h" aus und dahinter in Dezimalstunden */
 function set_regulaere_Arbeitszeit() {
 	var float_regulaere_Arbeitszeit = float_Arbeitszeit_decH() + float_pausen_decH();
-	var string_regulaere_Arbeitszeit = Date.today().add(float_regulaere_Arbeitszeit).hours().toString("HH:mm") + " h (" + float_regulaere_Arbeitszeit + ")";
+	var string_regulaere_Arbeitszeit = Date.today().add(float_regulaere_Arbeitszeit).hours().toString("HH:mm") + " h (" + float_regulaere_Arbeitszeit.toFixed(2) + ")";
 	document.getElementById("regulaere_Arbeitszeit").innerHTML = string_regulaere_Arbeitszeit;
 	return 0;
 }
@@ -23,7 +23,7 @@ function set_fruehestes_Ende() {
 /* gibt den Zeitraum bis Jetzt seit Arbeitsbeginn aus im Feld mit der ID "bis_jetzt" im Format "HH:mm h" und dahinter in Dezimalstunden */
 function set_bis_jetzt() {
 	var float_bis_jetzt = float_bis_jetzt_decH();
-	var string_bis_jetzt = Date.today().add(float_bis_jetzt).hours().toString("HH:mm") + " h (" + float_bis_jetzt + ")";
+	var string_bis_jetzt = Date.today().add(float_bis_jetzt).hours().toString("HH:mm") + " h (" + float_bis_jetzt.toFixed(2) + ")";
 	document.getElementById("bis_jetzt").innerHTML = string_bis_jetzt;
 	return 0;
 }
@@ -31,7 +31,7 @@ function set_bis_jetzt() {
 /* gibt die gesamten Überstunden aus im Feld mit der ID "ueberstunden_gesamt" im Format "HH:mm h" und dahinter in Dezimalstunden */
 function set_ueberstunden() {
 	var float_ueberstunden_gesamt = float_ueberstunden();
-	var string_ueberstunden_gesamt = Date.today().add(float_ueberstunden_gesamt).hours().toString("HH:mm") + " h (" + float_ueberstunden_gesamt + ")";
+	var string_ueberstunden_gesamt = Date.today().add(float_ueberstunden_gesamt).hours().toString("HH:mm") + " h (" + float_ueberstunden_gesamt.toFixed(2) + ")";
 	document.getElementById("ueberstunden_gesamt").innerHTML = string_ueberstunden_gesamt;
 	return 0;
 }
