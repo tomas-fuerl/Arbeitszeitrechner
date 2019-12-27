@@ -24,6 +24,6 @@ function float_ueberstunden() {
     for (var i = 0; i < ueberstunden.length; i++) {
         gesamtsaldo += ueberstunden[i];
     }
-    gesamtsaldo += document.getElementById("ueberstunden").value;
+    gesamtsaldo += parseFloat(document.getElementById("ueberstunden").value);
     return parseFloat(gesamtsaldo);
 }
