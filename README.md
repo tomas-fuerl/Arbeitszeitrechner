@@ -1,6 +1,9 @@
 # Arbeitszeitrechner
 Berechnet anhand von Einstechzeitpunkt und Überstunden diverse Endzeitpunkte und Zeiträume des Arbeitstages.
 
+# Vorschau
+Die interaktive Vorschau findest du unter https://tomas-fuerl.github.io/Arbeitszeitrechner/ .
+
 # Installationsanleitung
 1.  lade das Programm herunter oder hole dir die Daten per git remote -> git fetch
 2.  öffne die Datei "index.html"
